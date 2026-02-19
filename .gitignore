@@ -1,0 +1,23 @@
+# Virtual environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Storage files (do not upload resumes/jobs)
+backend/storage/resumes/*
+backend/storage/jobs/*
+
+# Keep folder structure
+!backend/storage/resumes/.gitkeep
+!backend/storage/jobs/.gitkeep
+
+# Mac
+.DS_Store
+
+# Environment
+.env
+
+# Logs
+*.log
