@@ -1,41 +1,200 @@
 # Resume Analyzer AI
 
-AI-powered Resume Analyzer that evaluates resumes against job descriptions using Large Language Models (LLMs). It helps identify skill gaps, calculate fit score, and generate interview preparation insights.
+Resume Analyzer AI is an AI-powered application that analyzes resumes against job descriptions using Large Language Models (LLMs).
+
+It helps users understand their job fit, identify missing skills, and prepare for interviews.
+
+This system allows users to upload resumes and multiple job descriptions, select a job, ask questions, and receive intelligent analysis.
 
 ---
 
-## Features
+# Features
 
 - Upload Resume (PDF, DOCX)
 - Upload Multiple Job Descriptions
-- Automatic Resume and Job Validation
-- Select Resume and Job from UI
-- Ask Custom Questions
-- AI-powered Skill Gap Analysis
-- Fit Score Calculation
-- Interview Preparation Suggestions
-- Clean FastAPI + Streamlit Architecture
+- Automatic file validation
+- Select resume and job description
+- Ask custom questions
+- Get AI-powered analysis
+- Fit score calculation
+- Missing skills identification
+- Interview preparation suggestions
 
 ---
 
-## System Architecture
+# System Architecture
 
-**Frontend**
+## Frontend
 - Streamlit UI
 
-**Backend**
+## Backend
 - FastAPI REST API
 
-**AI**
-- OpenAI GPT Model
+## AI
+- OpenAI GPT model
 
-**Parsing**
+## Parsing
 - PyMuPDF (PDF parsing)
 - python-docx (DOCX parsing)
 
-**Storage**
-- Local File Storage
+## Storage
+- Local file storage
 
 ---
 
-## Project Structure
+# Project Structure
+resume-analyzer/
+│
+├── backend/
+│   ├── main.py
+│   │
+│   ├── routes/
+│   │   ├── upload.py
+│   │   └── analyze.py
+│   │
+│   ├── services/
+│   │   ├── parser.py
+│   │   ├── validator.py
+│   │   └── analyzer.py
+│   │
+│   ├── storage/
+│   │   ├── resumes/
+│   │   └── jobs/
+│   │
+│   └── requirements.txt
+│
+├── frontend/
+│   ├── app.py
+│   └── requirements.txt
+│
+└── README.md
+
+
+
+---
+
+# Prerequisites
+
+Install the following:
+
+- Python 3.10 or later
+- pip
+- OpenAI API Key
+
+Check Python version:
+
+```bash
+python --version
+
+Setup Instructions
+
+Step 1: Clone the Repository
+git clone https://github.com/YOUR_USERNAME/resume-analyzer.git
+cd resume-analyzer
+
+Step 2: Create Virtual Environment
+python3 -m venv venv
+source venv/bin/activate
+
+
+Step 3: Install Backend Dependencies
+cd backend
+pip install -r requirements.txt
+Dependencies include:
+	•	fastapi
+	•	uvicorn
+	•	python-multipart
+	•	pymupdf
+	•	python-docx
+	•	openai
+
+Step 4: Set OpenAI API Key
+export OPENAI_API_KEY="your_api_key_here"
+
+
+Step 5: Run Backend Server
+From backend folder:
+uvicorn main:app --reload
+
+Backend runs at:
+http://localhost:8000
+
+
+API documentation:
+http://localhost:8000/docs
+
+
+Step 6: Install Frontend Dependencies
+Open a new terminal.
+
+Activate virtual environment.
+
+Go to frontend folder:
+cd frontend
+pip install -r requirements.txt
+
+Dependencies include:
+	•	streamlit
+	•	requests
+
+Step 7: Run Frontend
+streamlit run app.py
+
+Frontend runs at:
+http://localhost:8501
+
+How to Use
+
+Step 1: Upload Resume
+
+Use the sidebar to upload resume file.
+
+Step 2: Upload Job Description
+
+Upload one or more job descriptions.
+
+Step 3: Select Resume
+
+Choose resume from dropdown.
+
+Step 4: Select Job Description
+
+Choose job description from dropdown.
+
+Step 5: Ask Question
+
+Example questions:
+	•	What is my fit score?
+	•	What skills am I missing?
+	•	How does my experience align with this role?
+
+Step 6: Click Analyze
+
+The system will return AI-powered analysis.
+
+⸻
+
+Example Questions
+	•	What skills am I missing?
+	•	What is my fit score?
+	•	How should I prepare for interview?
+	•	What are my strengths for this job?
+
+⸻
+
+Technologies Used
+	•	Python
+	•	FastAPI
+	•	Streamlit
+	•	OpenAI GPT
+	•	PyMuPDF
+	•	python-docx
+
+⸻
+
+Future Improvements
+	•	Support more file formats
+	•	Add database storage
+	•	Add authentication
+	•	Add multi-user support
+	•	Deploy to cloud
